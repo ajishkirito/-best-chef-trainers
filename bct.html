@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b100d"><meta name="description" content="Best Chef Trainer — learn cooking skills, explore recipes and build culinary confidence."><meta name="color-scheme" content="dark">
+<title>Best Chef Trainer | Culinary Training</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+:root{--bg:#090909;--panel:#141414;--panel2:#1b1a18;--gold:#d6ad62;--gold2:#f2d99c;--text:#f7f3ea;--muted:#aaa49a;--line:#302b22;--green:#7fa88b;--red:#d97777;--shadow:0 18px 50px #0008}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'DM Sans',sans-serif;background:radial-gradient(ellipse at 50% -15%,#332717 0%,#11100e 35%,var(--bg) 72%);color:var(--text);min-height:100vh;padding:24px 18px 110px}
+button,input{font:inherit}button{cursor:pointer}.container{max-width:1080px;margin:auto}
+header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:8px 0 24px;border-bottom:1px solid var(--line);margin-bottom:28px}
+.brand{display:flex;align-items:center;gap:13px}.brand-mark{width:48px;height:48px;border:1px solid var(--gold);border-radius:15px;display:grid;place-items:center;color:var(--gold2);font-size:25px;background:linear-gradient(145deg,#302516,#12100d);box-shadow:0 0 30px #d6ad6218}
+.brand h1{font:700 clamp(18px,3vw,25px) 'Playfair Display',serif;letter-spacing:.2px}.brand p{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-top:4px}
+.header-note{color:var(--muted);font-size:12px;text-align:right}.header-note strong{display:block;color:var(--gold2);font-size:13px}
+.eyebrow{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:800;margin-bottom:10px}
+h2{font:700 24px 'Playfair Display',serif;margin-bottom:10px}h3{font-size:14px}
+p{line-height:1.65}.muted{color:var(--muted)}
+.card{background:linear-gradient(145deg,#191816,#111);border:1px solid var(--line);border-radius:20px;padding:22px;margin-bottom:18px;box-shadow:var(--shadow)}
+.card h2{font-size:19px;padding-bottom:13px;border-bottom:1px solid var(--line);margin-bottom:17px}
+.btn{background:linear-gradient(135deg,var(--gold2),#b9873f);color:#17120a;border:0;border-radius:11px;padding:12px 18px;font-weight:800;font-size:12px;box-shadow:0 7px 20px #d6ad6220;transition:.2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}.btn.secondary{background:#24211b;color:var(--gold2);border:1px solid #665333;box-shadow:none}.btn.danger{background:#542b2b;color:#ffe4e4;box-shadow:none}
+input[type=text],input[type=time],input[type=date]{width:100%;background:#0d0d0c;border:1px solid #393329;color:var(--text);padding:13px 14px;border-radius:10px;outline:none;font-size:13px}
+input:focus{border-color:var(--gold);box-shadow:0 0 0 3px #d6ad621a}input::placeholder{color:#77716a}
+#loginScreen{max-width:510px;margin:8vh auto 0;padding:34px;background:linear-gradient(150deg,#1e1b16,#111);border:1px solid #695431;border-radius:24px;text-align:center;box-shadow:0 25px 80px #000a}
+.login-emblem{width:68px;height:68px;border-radius:22px;margin:0 auto 20px;display:grid;place-items:center;background:#2c2417;border:1px solid var(--gold);font-size:32px}
+#loginScreen h2{font-size:27px}.login-input{margin:7px 0}.google-btn{width:100%;padding:12px;background:#f6f2e9;border:0;border-radius:10px;color:#27231d;font-weight:700;display:flex;align-items:center;justify-content:center;gap:9px}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat-box{padding:18px;background:linear-gradient(145deg,#282116,#171512);border:1px solid #51412a;border-radius:15px;text-align:left}
+.stat-value{font:700 24px 'Playfair Display',serif;color:var(--gold2)}.stat-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1.4px;margin-top:5px}
+.hero{min-height:240px;border-radius:22px;padding:30px;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(90deg,#0c0b09 0%,#0c0b09e8 44%,#0c0b0950 100%),url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1400&q=85') center/cover;border:1px solid #59482d;margin-bottom:18px}
+.hero-content{max-width:520px;position:relative;z-index:1}.hero h2{font-size:clamp(28px,5vw,42px);line-height:1.12;margin-bottom:12px}.hero h2 span{color:var(--gold2)}.hero p{color:#c6bfb2;font-size:13px;margin-bottom:20px}
+.section-content{display:none}.section-content.active{display:block;animation:fade .25s ease}@keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.task-item{display:flex;align-items:center;gap:13px;padding:14px;background:#1b1a17;border:1px solid var(--line);border-radius:12px;margin:9px 0}.task-item input{width:19px;height:19px;accent-color:var(--gold)}.task-title{font-size:13px;font-weight:700}.task-time{font-size:11px;color:var(--muted);margin-top:3px}
+.recipe-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.recipe-card{position:relative;background:#1c1a16;border:1px solid var(--line);border-radius:15px;overflow:hidden;cursor:pointer;transition:.2s}.recipe-card:hover{transform:translateY(-4px);border-color:#927342}.recipe-card img{width:100%;height:145px;object-fit:cover;display:block}.recipe-title{padding:12px;font-size:12px;font-weight:700}.lock-badge{position:absolute;top:10px;right:10px;background:#090909d9;color:var(--gold2);border:1px solid #6e5733;padding:5px 8px;border-radius:20px;font-size:10px}
+#recipeDetailView,.dm-container{display:none;background:#171613;border:1px solid var(--line);border-radius:16px;padding:18px}
+.detail-panel{background:#211f1a;padding:15px;border:1px solid var(--line);border-radius:12px;margin:12px 0}.detail-panel h3{color:var(--gold2);margin-bottom:8px}.detail-panel p{font-size:13px;white-space:pre-line}
+.chat-box{height:230px;overflow:auto;background:#0d0d0c;border:1px solid var(--line);border-radius:13px;padding:14px;margin-bottom:12px;font-size:13px}.chat-box div{padding:7px 0;border-bottom:1px solid #27231d}.chat-input-group{display:flex;gap:9px}
+.profile-img{width:100px;height:100px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);padding:3px}
+.cert-box{background:linear-gradient(135deg,#3a2d18,#20190f);border:1px dashed var(--gold);padding:22px;border-radius:14px;text-align:center;color:var(--gold2)}
+.tab-menu{position:fixed;bottom:0;left:0;width:100%;display:flex;justify-content:center;gap:6px;background:#0b0b0bf2;backdrop-filter:blur(18px);border-top:1px solid #3c3325;padding:10px 8px calc(10px + env(safe-area-inset-bottom));z-index:1000}
+.tab-btn{background:transparent;border:0;color:#9e988e;display:flex;align-items:center;gap:7px;padding:10px 13px;border-radius:10px;font-size:11px;font-weight:700}.tab-btn span{font-size:16px}.tab-btn.active{background:#2b2418;color:var(--gold2);box-shadow:inset 0 0 0 1px #695431}
+@media(max-width:700px){body{padding:15px 12px 105px}.recipe-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
+
+/* New Merged Sections Styling */
+.schedule-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin-top:10px}
+.schedule-day{border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:10px;min-height:70px}
+.schedule-day.off{opacity:.55;background:#171717}.schedule-day strong{display:block;color:var(--gold2);font-size:12px;margin-bottom:4px}.schedule-day small{color:var(--muted);font-size:10px}
+.library-video{background:#171d19;border:1px solid #3a463d;border-radius:14px;padding:12px;margin:12px 0}
+.library-video video{width:100%;max-height:250px;background:#000;border-radius:10px}
+.library-meta{font-size:11px;color:#b8b9ae;margin:7px 0}
+.community-post{background:linear-gradient(145deg,#18221c,#101612);border:1px solid #334238;border-radius:18px;padding:15px;margin:12px 0}
+.community-media{display:block;width:100%;max-height:350px;object-fit:contain;border-radius:13px;background:#050706}
+.reel-feed{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.reel-card{background:#121a15;border:1px solid #344238;border-radius:16px;padding:10px}
+.reel-card video{width:100%;height:240px;object-fit:cover;background:#000;border-radius:12px;margin-bottom:8px}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+ <div class="brand"><div class="brand-mark">♨</div><div><h1>Best Chef Trainer</h1><p>THE ART OF CULINARY EXCELLENCE</p></div></div>
+ <div class="header-tools"><div class="header-note"><strong>Curated Culinary Learning</strong>Learn • Create • Achieve[span_3](start_span)[span_3](end_span)</div></div>
+</header>
+
+<!-- Login Screen -->
+<div id="loginScreen" class="card" style="max-width:480px;margin:5vh auto;text-align:center;">
+ <div class="login-emblem" style="width:60px;height:60px;margin:0 auto 15px;background:#2c2417;border-radius:15px;display:grid;place-items:center;font-size:28px;">♨</div>
+ <h2>Welcome, Future Chef</h2><p class="muted" style="font-size:13px;margin-bottom:15px">Sign in to continue your culinary journey.</p>
+ <input type="text" id="loginIdentifier" placeholder="Enter your mobile number" style="margin-bottom:10px;">
+ <input type="text" id="loginDisplayName" placeholder="Your name (optional)" style="margin-bottom:15px;">
+ <button class="btn" onclick="handleManualLogin()" style="width:100%">Continue →</button>
+</div>
+
+<!-- Main App -->
+<div id="mainApp" style="display:none">
+
+<!-- 1. HOME & TRAINING PLAN MERGED -->
+<div id="home" class="section-content active">
+ <div class="hero"><div class="hero-content"><div class="eyebrow">Your kitchen. Your mastery.</div><h2>Craft Your Path to <span>Master Chef</span></h2><p>Build your skills, explore world cuisines and unlock your culinary potential.</p><button class="btn" onclick="switchTab('recipes',document.querySelectorAll('.tab-btn')[1])">Explore Recipes →</button></div></div>
+ <div class="card"><div class="stats-grid"><div class="stat-box"><div class="stat-value" id="levelVal">Level 1</div><div class="stat-label">Level</div></div><div class="stat-box"><div class="stat-value" id="xpVal">0 XP</div><div class="stat-label">Experience</div></div><div class="stat-box"><div class="stat-value" id="recipeUnlocked">100</div><div class="stat-label">Recipes</div></div></div></div>
+ 
+ <div class="card">
+  <div class="eyebrow">TRAINING PLANNER & GOALS</div>
+  <h2>31-Day Training Calendar & Schedule</h2>
+  <p class="muted" style="font-size:12px;margin-bottom:10px">Monday to Friday are training days; Saturday and Sunday are rest days[span_4](start_span)[span_4](end_span).</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px">
+   <input id="planStartDate" type="date">
+   <input id="planGoal" type="text" placeholder="Training goal e.g. Knife skills">
+  </div>
+  <button class="btn secondary" onclick="renderTrainingCalendar()" style="width:100%;margin-bottom:10px">Show 31-Day Calendar</button>
+  <div id="trainingCalendar" class="schedule-grid"></div>
+ </div>
+
+ <div class="card"><div class="eyebrow">Daily discipline · +50 XP</div><h2>Daily Masterclass Tasks</h2><div id="taskListContainer"><div class="task-item"><input type="checkbox" class="task-chk" onclick="verifyAndCheck(this)"><div class="task-info"><div class="task-title">05:00 AM: Stamina & Strength Workout</div><div class="task-time">Core, Squats & Wrist Rotations</div></div></div></div></div>
+</div>
+
+<!-- 2. RECIPES -->
+<div id="recipes" class="section-content">
+ <div class="card" id="recipeListView">
+  <div class="eyebrow">Explore the world on a plate</div><h2>Signature Recipe Collection</h2>
+  <input type="text" id="recipeSearch" placeholder="Search recipes..." oninput="renderRecipes()" style="margin:10px 0">
+  <div class="recipe-grid" id="recipeGridContainer"></div>
+ </div>
+ <div id="recipeDetailView">
+  <button class="btn secondary" onclick="backToRecipeList()" style="margin-bottom:10px">← Back to Recipes</button>
+  <h2 id="detailTitle"></h2>
+  <p id="detailCuisine" class="muted"></p>
+  <div class="detail-panel"><h3>Ingredients</h3><div id="detailIngredients"></div></div>
+  <div class="detail-panel"><h3>Method</h3><div id="detailSteps"></div></div>
+ </div>
+</div>
+
+<!-- 3. FEED & CLIPS MERGED -->
+<div id="feed" class="section-content">
+ <div class="card">
+  <div class="eyebrow">COMMUNITY & CLIPS</div><h2>Community Feed & Short Clips</h2>
+  <p class="muted" style="font-size:12px;margin-bottom:12px">Share your cooking photos, videos, and short reels.</p>
+  <div style="display:grid;gap:8px;margin-bottom:15px">
+   <textarea id="postCaptionInput" placeholder="What did you cook today?" style="width:100%;background:#0d0d0c;border:1px solid #393329;color:var(--text);padding:10px;border-radius:10px;min-height:70px;"></textarea>
+   <input id="postMediaInput" type="file" accept="image/*,video/*" style="font-size:11px">
+   <button class="btn" onclick="createCommunityPost()">＋ Publish Post / Clip</button>
+  </div>
+ </div>
+ <div class="card">
+  <h2>Clips Feed</h2>
+  <div id="reelFeedList" class="reel-feed"></div>
+ </div>
+ <div class="card">
+  <h2>Community Posts</h2>
+  <div id="communityFeedList"></div>
+ </div>
+</div>
+
+<!-- 4. MESSAGES -->
+<div id="messages" class="section-content">
+ <div class="card" id="chatListView">
+  <h2>Messages</h2>
+  <div id="chatThreads"></div>
+ </div>
+</div>
+
+<!-- 5. PROFILE & LIBRARY MERGED -->
+<div id="profile" class="section-content">
+ <div class="card">
+  <div class="eyebrow">ACADEMY IDENTITY</div>
+  <div style="display:flex;align-items:center;gap:15px;margin-bottom:15px">
+   <img id="profileImagePreview" class="profile-img" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb" alt="Profile">
+   <div>
+    <h2 id="profileName" style="margin:0">Chef</h2>
+    <p id="profilePhoneDisplay" class="muted" style="font-size:12px">Local student</p>
+   </div>
+  </div>
+  <button class="btn danger" onclick="handleLogout()" style="width:100%;margin-bottom:20px">Logout</button>
+  
+  <div class="eyebrow" style="border-top:1px solid var(--line);padding-top:15px;">TRAINING RECORDINGS LIBRARY</div>
+  <h2>Your Saved Practice Videos</h2>
+  <p class="muted" style="font-size:12px">Your practice recordings stored locally on this device[span_5](start_span)[span_5](end_span).</p>
+  <div id="trainingLibraryList"><p class="muted">No training videos saved yet.</p></div>
+ </div>
+</div>
+
+</div> <!-- End Main App -->
+
+<!-- Bottom Navigation (Updated to 4 Tabs) -->
+<div class="tab-menu" id="bottomNav" style="display:none">
+ <button class="tab-btn active" onclick="switchTab('home',this)"><span>⌂</span>Home & Plan</button>
+ <button class="tab-btn" onclick="switchTab('recipes',this)"><span>🍲</span>Recipes</button>
+ <button class="tab-btn" onclick="switchTab('feed',this)"><span>▤</span>Feed & Clips</button>
+ <button class="tab-btn" onclick="switchTab('profile',this)"><span>◉</span>Profile & Library</button>
+</div>
+</div>
+
+<script>
+let currentUser="", currentLevel=1, totalXP=0, unlockedRecipes=100;
+const recipes = [
+ {name:'Truffle Mushroom Risotto', cuisine:'Italian', time:'40 mins', ingredients:['Arborio rice','Mushrooms','Stock'], steps:[['0-5 min','Warm stock'],['5-10 min','Sauté mushrooms']], image:'https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=500&q=80'},
+ {name:'Garden Avocado Salad', cuisine:'Healthy', time:'15 mins', ingredients:['Avocado','Salad leaves','Lemon'], steps:[['0-5 min','Chop veggies'],['5-10 min','Toss']], image:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=500&q=80'}
+];
+
+function handleManualLogin(){
+ const name = document.getElementById('loginDisplayName').value || 'Chef Student';
+ currentUser = name;
+ document.getElementById('profileName').innerText = name;
+ document.getElementById('loginScreen').style.display = 'none';
+ document.getElementById('mainApp').style.display = 'block';
+ document.getElementById('bottomNav').style.display = 'flex';
+ renderRecipes();
+ renderTrainingCalendar();
+}
+
+function switchTab(id, btn){
+ document.querySelectorAll('.section-content').forEach(x=>x.classList.remove('active'));
+ document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ if(btn) btn.classList.add('active');
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function renderRecipes(){
+ const g = document.getElementById('recipeGridContainer');
+ if(!g) return;
+ g.innerHTML = recipes.map((r, i)=>`
+  <div class="recipe-card" onclick="openRecipeDetail(${i})">
+   <img src="${r.image}" alt="${r.name}">
+   <div class="recipe-title">${r.name}<br><small class="muted">${r.cuisine} · ${r.time}</small></div>
+  </div>
+ `).join('');
+}
+
+function openRecipeDetail(idx){
+ const r = recipes[idx];
+ document.getElementById('recipeListView').style.display = 'none';
+ document.getElementById('recipeDetailView').style.display = 'block';
+ document.getElementById('detailTitle').innerText = r.name;
+ document.getElementById('detailCuisine').innerText = r.cuisine;
+ document.getElementById('detailIngredients').innerHTML = r.ingredients.map(i=>`<div>• ${i}</div>`).join('');
+ document.getElementById('detailSteps').innerHTML = r.steps.map(s=>`<div><b>${s[0]}</b>: ${s[1]}</div>`).join('');
+}
+
+function backToRecipeList(){
+ document.getElementById('recipeDetailView').style.display = 'none';
+ document.getElementById('recipeListView').style.display = 'block';
+}
+
+function renderTrainingCalendar(){
+ const host = document.getElementById('trainingCalendar');
+ if(!host) return;
+ let html = '';
+ for(let i=1; i<=31; i++){
+  let weekend = (i % 7 === 0 || i % 7 === 6);
+  html += `<div class="schedule-day ${weekend?'off':''}"><strong>Day ${i}</strong><small>${weekend?'Rest Day':'Training active'}</small></div>`;
+ }
+ host.innerHTML = html;
+}
+
+function verifyAndCheck(c){
+ if(c.checked){
+  totalXP += 50;
+  document.getElementById('xpVal').innerText = totalXP + ' XP';
+  alert('Task completed! +50 XP');
+ }
+}
+
+function createCommunityPost(){
+ const cap = document.getElementById('postCaptionInput').value;
+ if(!cap) return alert('Enter some text');
+ const feed = document.getElementById('communityFeedList');
+ feed.innerHTML = `<div class="community-post"><b>${currentUser}</b><p>${cap}</p></div>` + feed.innerHTML;
+ document.getElementById('postCaptionInput').value = '';
+}
+
+function handleLogout(){ location.reload(); }
+</script>
+</body>
+</html>
